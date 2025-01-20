@@ -1,8 +1,6 @@
 ---
 title: "Creating a Basic 'useQuery' React Hook"
-mathjax: true
 layout: post
-categories: frontend, javascript, typescript, react
 ---
 
 Often times when creating a React application that fetches data, I find myself repeating the same fetch logic in multiple components. In order to make my code more DRY _(Don't Repeat Yourself)_, I decided to extract this logic into one reusable custom hook.
