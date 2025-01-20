@@ -5,6 +5,7 @@ layout: post
 
 Often times when creating a React application that fetches data, I find myself repeating the same fetch logic in multiple components. In order to make my code more DRY _(Don't Repeat Yourself)_, I decided to extract this logic into one reusable custom hook.
 
+
 # An example component before the custom hook
 {% highlight typescript %}
 import { Fragment, useEffect, useState } from 'react'
@@ -114,4 +115,7 @@ export default function Posts() {
     )
 }
 {% endhighlight %}
-As seen above, the **Posts** component is now much cleaner. Instead of calling **useState** three times, only one call to the new **useQuery** hook is needed. All that's required is a url string to be passed in as well as an optional generic type to make the returned data typed. Then after destructuring the returned object into separate **posts**, **error**, and **loading** constants, all the logic below should remain the same. This is great, but what is more valuable is the fact that this hook can now be used in all of our components! If a user list component was needed, as mentioned above, **useQuery** could be used again just like in the **Posts** component giving that **Users** component access to it's own **data**, **loading**, and **error** states.\n\n# Conclusion\nI was pleasantly surprised how easy it was to make my own custom React hook. It took a little more work and time upfront but now have a reusable hook that I can use in any React application I build in the future! A brief look into React hooks and how to create a custom data fetching hook.
+As seen above, the **Posts** component is now much cleaner. Instead of calling **useState** three times, only one call to the new **useQuery** hook is needed. All that's required is a url string to be passed in as well as an optional generic type to make the returned data typed. Then after destructuring the returned object into separate **posts**, **error**, and **loading** constants, all the logic below should remain the same. This is great, but what is more valuable is the fact that this hook can now be used in all of our components! If a user list component was needed, as mentioned above, **useQuery** could be used again just like in the **Posts** component giving that **Users** component access to it's own **data**, **loading**, and **error** states.
+
+# Conclusion
+I was pleasantly surprised how easy it was to make my own custom React hook. It took a little more work and time upfront but now have a reusable hook that I can use in any React application I build in the future! A brief look into React hooks and how to create a custom data fetching hook.
