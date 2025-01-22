@@ -7,16 +7,23 @@ no_header: true
 <style>
   .title {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 48px;
   }
   .title > img {
     border-radius: 100%;
-    width: 35%;
+    height: 200px;
   }
   .title > h1 {
     line-height: 1.2;
+  }
+  /** for larger screens **/
+  @media (min-width: 640px) {
+    .title {
+      flex-direction: row;
+      gap: 48px;
+    }
   }
 </style>
 
